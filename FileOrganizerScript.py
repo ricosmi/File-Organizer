@@ -50,8 +50,6 @@ if __name__ == '__main__':
     folder = pick_folder()
     if folder:
         organize_folder(folder)
-        print("Folder organized successfully.")
-    else:
-        print("No folder selected.")
+
 
 
