@@ -1,5 +1,7 @@
 import os
 import shutil
+import tkinter as tk
+from tkinter import filedialog
 
 FOLDER_PATH = 'C:/Users/ionut/Desktop/Licenta Dump'
 
@@ -37,7 +39,19 @@ def organize_folder(path):
             else:
                 print(f'Skipped (already exists): {item}')
 
+def pick_folder():
+    root = tk.Tk()
+    root.withdraw()
+    folder_path = filedialog.askdirectory(title="Select a folder to organize")
+    return folder_path
+
+
 if __name__ == '__main__':
-    organize_folder(FOLDER_PATH)
+    folder = pick_folder()
+    if folder:
+        organize_folder(folder)
+        print("Folder organized successfully.")
+    else:
+        print("No folder selected.")
 
 
